@@ -31,7 +31,7 @@ public class UserController {
         userRepository.save(user);
         return "success";
     }
-    
+    //get all user in tabular format on ui
    @GetMapping("/getall")
     public String getAllUser(Model model) {
     	List<User> userList = userRepository.findAll();
