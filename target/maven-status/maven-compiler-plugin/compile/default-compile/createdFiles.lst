@@ -1,0 +1,6 @@
+com\example\userform\UserFormApplication.class
+com\example\userform\controller\UserApiController.class
+com\example\userform\repository\UserRepository.class
+com\example\userform\controller\ResourceNotFoundException.class
+com\example\userform\model\User.class
+com\example\userform\controller\UserController.class

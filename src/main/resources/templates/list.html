@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <h2>User List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>City</th>
+                <th>Age</th>
+                <th>Mobile</th>
+                <th>Hobby</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.city}"></td>
+                <td th:text="${user.age}"></td>
+                <td th:text="${user.mobileNumber}"></td>
+                <td th:text="${user.hobby}"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div style="text-align: center; margin: 20px;">
+    <a href="/form"><button class="btn btn-register">Register Another User</button></a>
+    <a href="/submit"><button class="btn btn-success">Success Page</button></a>
+</div>
+
+<style>
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        color: white;
+    }
+
+    .btn-register {
+        background-color: #28a745; /* Green */
+    }
+
+    .btn-register:hover {
+        background-color: #218838; /* Darker green */
+    }
+
+    .btn-success {
+        background-color: #007bff; /* Blue */
+    }
+
+    .btn-success:hover {
+        background-color: #0056b3; /* Darker blue */
+    }
+    </style>
+   
+</body>
+</html>

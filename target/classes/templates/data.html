@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body >
+<form th:action="@{/submit}" th:object="${user}" method="post">
+    <h2>User Registration</h2>
+
+    <label>Username:</label>
+    <input type="text" th:field="*{username}"  >
+
+    <label>City:</label>
+    <input type="text" th:field="*{city}" required>
+
+    <label>Age:</label>
+    <input type="number" th:field="*{age}" required>
+
+    <label>Mobile Number:</label>
+    <input type="text" th:field="*{mobileNumber}" required>
+    
+    <label>Hobby:</label>
+    <input type="text" th:field="*{hobby}" required>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
